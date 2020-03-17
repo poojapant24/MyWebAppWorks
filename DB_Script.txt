@@ -1,0 +1,94 @@
+//Database :
+use HTA_Database
+
+
+//Create collections:
+(1) User
+db.createCollection("user1");
+
+db.user1.insert({"User_Id": 1,"password": "2cd1b19703a36618","First_Name":"John",
+ "Last_Name":"Reese","email":"jreese1@uncc.edu",
+"ADDRESS_1":"16 Catawba dr","ADDRESS_2":"Apt 2",
+"CITY":"Cornelius","STATE":"North Carolina",
+"ZIP":28031,"COUNTRY":"USA"});
+
+db.user1.insert({"User_Id": 2,"password": "2cd1b19703a36618","First_Name":"Nick",
+ "Last_Name":"Timberson","email":"ntimb1@uncc.edu",
+"ADDRESS_1":"256 Mallard Creek rd","ADDRESS_2":"Apt 008",
+"CITY":"Charlotte","STATE":"North Carolina",
+"ZIP":28023,"COUNTRY":"USA"});
+
+//To verify:
+//db.User.find().pretty();
+
+(2) Connection
+db.createCollection("connection1");
+
+//inserting data
+db.connection1.insert({"connection_ID": 10,
+    "connection_Topic":"Winter Championship Finals Match - Men Single",
+    "Details":"The 12th annual Winter Championship Finals Match - Men will take place on Sunday Dec 2,2019 at 2.30 PM EST. Match will be open to public with a ticket. All other details related to ticket please call +1 888 0000 1234.",
+    "Datetime": "2019-12-20",
+    "Connection_Cat":"Men",
+    "location": "Jetton Park, Cornelius",
+    "imageURL": "/assets/Images/10.jpg",
+    "Owner_ID":1});
+
+db.connection1.insert({"connection_ID": 11,
+     "connection_Topic":"Winter Championship Finals Match - Men Double",
+     "Details":"The 12th annual Winter Championship Finals Match - Men Double will take place on Sunday Dec 15,2019 at 3 PM EST. Match will be open to public with a ticket. All other details related to ticket please call +1 888 0000 1234.",
+     "Datetime": "2019-12-15",
+     "Connection_Cat":"Men",
+     "location": "Denever Recreational Park, Denever",
+     "imageURL": "/assets/Images/11.jpg",
+    "Owner_ID":1});
+
+db.connection1.insert({"connection_ID": 12,
+     "connection_Topic":"Winter Championship Finals Match - Men Under 19",
+     "Details":"The 12th annual Winter Championship Finals Match - Men Under 19 will take place on Sunday Dec 28,2019 at 3 PM EST. Match will be open to public with a ticket. All other details related to ticket please call +1 888 0000 1234.",
+     "Datetime": "2019-12-18",
+     "Connection_Cat":"Men",
+     "location": "Ramsay creek Park, Cornelius",
+     "imageURL": "/assets/Images/12.jpg",
+    "Owner_ID":1});
+
+db.connection1.insert({"connection_ID": 20,
+     "connection_Topic":"Winter Championship Finals Match - Women Single",
+     "Details":"The 12th annual Winter Championship Finals Match - Women will take place on Sunday Dec 8,2019 at 3 PM EST. Match will be open to public with a ticket. All other details related to ticket please call +1 888 0000 1234.",
+     "Datetime": "2019-12-28",
+     "Connection_Cat":"Women",
+     "location": "Huntersville Park, Huntersville",
+     "imageURL": "/assets/Images/20.jpg",
+    "Owner_ID":2});
+
+db.connection1.insert({"connection_ID": 21,
+     "connection_Topic":"Winter Championship Finals Match - Women Double",
+     "Details":"The 12th annual Winter Championship Finals Match - Women Double will take place on Sunday Dec 22,2019 at 3 PM EST. Match will be open to public with a ticket. All other details related to ticket please call +1 888 0000 1234.",
+     "Datetime": "2019-12-24",
+     "Connection_Cat":"Women",
+     "location": "Jetton Park, cornelius",
+     "imageURL": "/assets/Images/21.jpg",
+    "Owner_ID":2});
+
+db.connection1.insert({"connection_ID": 22,
+     "connection_Topic":"Winter Championship Finals Match - Women Under 19",
+     "Details":"The 12th annual Winter Championship Finals Match - Women Under 19 will take place on Sunday Dec 28,2019 at 3 PM EST. Match will be open to public with a ticket. All other details related to ticket please call +1 888 0000 1234.",
+     "Datetime": "2019-12-27",
+     "Connection_Cat":"Women",
+     "location": "Jetton Park, Cornelius",
+     "imageURL": "/assets/Images/22.jpg",
+    "Owner_ID":2});
+
+//To verify:
+//db.Connection.find().pretty(); 
+
+
+(3) UserConnection
+db.createCollection("userconnection1");
+
+
+//data
+db.userconnection1.insert({"User_Id": 1,"connection_ID": 10, "RSVP":"Yes"});
+db.userconnection1.insert({"User_Id": 1,"connection_ID": 20, "RSVP":"No"});
+db.userconnection1.insert({"User_Id": 2,"connection_ID": 10, "RSVP":"Yes"});
+db.userconnection1.insert({"User_Id": 2,"connection_ID": 20, "RSVP":"No"});
